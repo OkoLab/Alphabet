@@ -27,6 +27,9 @@ public class Core
     //символ в правом кольце
     protected Char rightSymbol;
 
+    //баллы изучаемого символа
+    protected int symbolPoint;
+
     // генератор случайных чисел для всех методов класса
     Random rand = new Random();
 
@@ -63,6 +66,11 @@ public class Core
     public string GetSymbolSound()
     {
         return pathToSoundFileSymbolToStudy;
+    }
+
+    public int GetSymbolPoint()
+    {
+        return symbolPoint;
     }
 
     public Constants.GameSituation_Enum GetSituation()
@@ -190,6 +198,7 @@ public class Core
             {
                 symbolToStudy = temp_symbol.symbol_name;
                 pathToSoundFileSymbolToStudy = temp_symbol.path;
+                symbolPoint = temp_symbol.pointCounter;
                 return true;
             }
         }

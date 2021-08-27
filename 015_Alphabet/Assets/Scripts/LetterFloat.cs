@@ -47,6 +47,10 @@ public class LetterFloat : MonoBehaviour
         GlobalClass.CORE.PutMessage(Constants.Message_Enum.GAME_START);
         //заполняем буквы значениями
         GetComponent<TextMesh>().text = GlobalClass.CORE.GetSymbolToStudy();
+        
+        //расчитываем скорость падения буквы 
+        speed -= GlobalClass.CORE.GetSymbolPoint()*0.001f;
+
         leftLetter.text = GlobalClass.CORE.GetLeftSymbol();
         rightLetter.text = GlobalClass.CORE.GetRightSymbol();
 
